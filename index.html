@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Wassim Yazza - Full Stack Web Developer based in Casablanca, Morocco.">
+    <title>Wassim Yazza | Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            950: '#020617',
+                        },
+                        teal: {
+                            450: '#2dd4bf', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .nav-link.active {
+            color: #2dd4bf;
+            background-color: rgba(45, 212, 191, 0.1);
+        }
+        .nav-link.active i {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-teal-500 selection:text-white pb-24 md:pb-0">
+
+    <nav class="hidden md:flex fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex-col gap-6">
+        <div class="glass-card p-4 rounded-full flex flex-col gap-6 items-center border border-slate-700/50 shadow-2xl shadow-black/50">
+            <a href="#hero" class="nav-link p-3 rounded-full text-slate-400 hover:text-teal-400 transition-all duration-300 relative group" aria-label="Home">
+                <i class="fas fa-home text-lg"></i>
+                <span class="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Home</span>
+            </a>
+            <a href="#about" class="nav-link p-3 rounded-full text-slate-400 hover:text-teal-400 transition-all duration-300 relative group" aria-label="About">
+                <i class="fas fa-user text-lg"></i>
+                <span class="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">About</span>
+            </a>
+            <a href="#skills" class="nav-link p-3 rounded-full text-slate-400 hover:text-teal-400 transition-all duration-300 relative group" aria-label="Skills">
+                <i class="fas fa-code text-lg"></i>
+                <span class="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Skills</span>
+            </a>
+            <a href="#experience" class="nav-link p-3 rounded-full text-slate-400 hover:text-teal-400 transition-all duration-300 relative group" aria-label="Experience">
+                <i class="fas fa-briefcase text-lg"></i>
+                <span class="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Experience</span>
+            </a>
+            <a href="#projects" class="nav-link p-3 rounded-full text-slate-400 hover:text-teal-400 transition-all duration-300 relative group" aria-label="Projects">
+                <i class="fas fa-layer-group text-lg"></i>
+                <span class="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Projects</span>
+            </a>
+            <a href="#contact" class="nav-link p-3 rounded-full text-slate-400 hover:text-teal-400 transition-all duration-300 relative group" aria-label="Contact">
+                <i class="fas fa-envelope text-lg"></i>
+                <span class="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <nav class="md:hidden fixed bottom-4 left-4 right-4 z-50">
+        <div class="glass-card p-4 rounded-2xl flex justify-between items-center shadow-2xl shadow-black/50 border border-slate-700/50">
+            <a href="#hero" class="nav-link p-2 rounded-xl text-slate-400 hover:text-teal-400 transition-colors"><i class="fas fa-home"></i></a>
+            <a href="#about" class="nav-link p-2 rounded-xl text-slate-400 hover:text-teal-400 transition-colors"><i class="fas fa-user"></i></a>
+            <a href="#skills" class="nav-link p-2 rounded-xl text-slate-400 hover:text-teal-400 transition-colors"><i class="fas fa-code"></i></a>
+            <a href="#projects" class="nav-link p-2 rounded-xl text-slate-400 hover:text-teal-400 transition-colors"><i class="fas fa-layer-group"></i></a>
+            <a href="#contact" class="nav-link p-2 rounded-xl text-slate-400 hover:text-teal-400 transition-colors"><i class="fas fa-envelope"></i></a>
+        </div>
+    </nav>
+
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="inline-block p-1 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 mb-6">
+                        <div class="bg-slate-950 rounded-full px-4 py-1">
+                            <span class="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-purple-400">
+                                Full Stack Web Developer
+                            </span>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+                        Hi, I'm <br> <span class="text-teal-400">Wassim Yazza</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl font-light leading-relaxed">
+                        Developer based in Casablanca, Morocco. Specialized in building scalable platforms with Laravel, React.js, and Node.js.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                        <a href="#projects" class="px-8 py-3 rounded-lg bg-teal-500 hover:bg-teal-600 text-white font-semibold transition-all transform hover:-translate-y-1 shadow-lg shadow-teal-500/20 w-full sm:w-auto text-center">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="px-8 py-3 rounded-lg border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-medium transition-all w-full sm:w-auto text-center">
+                            Contact Me
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 flex justify-center lg:justify-start gap-6 text-slate-500">
+                        <a href="https://github.com/wassimyazza" target="_blank" class="hover:text-white transition-colors text-2xl" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/wassim-yazza-78b926338/" target="_blank" class="hover:text-blue-400 transition-colors text-2xl" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:wassimyazza10@gmail.com" class="hover:text-teal-400 transition-colors text-2xl" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 relative flex justify-center lg:justify-end">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px]">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-teal-500 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                        <div class="relative w-full h-full rounded-full border-4 border-slate-800 shadow-2xl overflow-hidden bg-slate-900">
+                            <img src="./1737665207449.jpg" 
+                                 alt="Wassim Yazza" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-slate-850">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-teal-500 pl-4">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4 text-slate-400 leading-relaxed">
+                    <p>
+                        I am a Full Stack Web Developer currently studying at <strong>YouCode Safi (UM6P)</strong>. My academic background includes a Baccalaureate in Physical Sciences (French Option) from Lycée Najib Mahfoud in 2024.
+                    </p>
+                    <p>
+                        I have experience in analyzing and designing systems using UML and developing full-stack applications with technologies like React.js, Laravel, and Node.js.
+                    </p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="text-lg font-semibold text-white mb-4">Languages</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">English (B2)</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-teal-500 w-[75%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">French (B1)</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-teal-500 w-[60%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Arabic (Native)</span>
+                            <div class="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full bg-teal-500 w-[100%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-colors">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 text-xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Front-end</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">HTML</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">CSS</span>
+                        <span class="px-3 py-1 bg-slate-700 text-teal-400 rounded-full text-sm font-medium border border-teal-500/30">Tailwind</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Bootstrap</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-slate-700 text-teal-400 rounded-full text-sm font-medium border border-teal-500/30">React.js</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">TypeScript</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Next.js</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">React Native</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-colors">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 text-xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Back-end</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">PHP (OOP/MVC)</span>
+                        <span class="px-3 py-1 bg-slate-700 text-teal-400 rounded-full text-sm font-medium border border-teal-500/30">Laravel</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Express.js</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">NestJS</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition-colors">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400 text-xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">DevOps & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Kubernetes</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Git/GitHub</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">GitHub Actions</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Jenkins</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Postman</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Figma</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">UML</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Jira/Trello</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-slate-850">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 border-l-4 border-teal-500 pl-4">Experience & Education</h2>
+            
+            <div class="relative border-l border-slate-700 ml-4 space-y-12">
+                <div class="relative pl-8 group">
+                    <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-[9px] top-1 border-4 border-slate-900 group-hover:scale-125 transition-transform"></div>
+                    <div class="glass-card p-6 rounded-lg">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-bold text-white">Full Stack Web Developer Intern</h3>
+                            <span class="text-teal-400 text-sm font-medium bg-teal-400/10 px-3 py-1 rounded-full">May 2025 - July 2025</span>
+                        </div>
+                        <p class="text-lg text-slate-300 mb-2">WebCom - Casablanca</p>
+                        <p class="text-slate-400 text-sm mb-4">Design and development of <strong>Devaito.com</strong>, a no-code/low-code platform dedicated to e-commerce site creation.</p>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2">
+                            <li>Integrated drag & drop functionality and code editing.</li>
+                            <li>Implemented AI features for site management.</li>
+                            <li class="mt-2 text-teal-400 text-sm">Stack: HTML, CSS, JavaScript, Laravel.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute w-4 h-4 bg-slate-500 rounded-full -left-[9px] top-1 border-4 border-slate-900 group-hover:scale-125 transition-transform"></div>
+                    <h3 class="text-xl font-bold text-white">Web Development</h3>
+                    <p class="text-slate-400">YouCode - Safi | UM6P</p>
+                    <p class="text-sm text-slate-500 mt-1">2024 - 2026</p>
+                </div>
+
+                <div class="relative pl-8 group">
+                    <div class="absolute w-4 h-4 bg-slate-500 rounded-full -left-[9px] top-1 border-4 border-slate-900 group-hover:scale-125 transition-transform"></div>
+                    <h3 class="text-xl font-bold text-white">Baccalaureate in Science</h3>
+                    <p class="text-slate-400">Lycée Najib Mahfoud</p>
+                    <p class="text-sm text-slate-500 mt-1">2024</p>
+                    <p class="text-sm text-slate-500 mt-1">Physics option (French)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative rounded-xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-teal-500/50 transition-all hover:-translate-y-2">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">Fleet Truck</h3>
+                            <span class="text-xs text-slate-500">12/12/2025</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                            Fleet management application with role-based authentication, CRUD for vehicles/trips, maintenance tracking, and PDF report generation.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">React.js</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">Node.js</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">Express.js</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">MongoDB</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">Docker</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">JWT</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">Tailwind CSS</span>
+                            </div>
+                            <div class="flex gap-4 pt-4 border-t border-slate-700">
+                                <a href="https://github.com/wassimyazza" class="text-white hover:text-teal-400 text-sm flex items-center gap-2">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-teal-500/50 transition-all hover:-translate-y-2">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">Stay & Traveler</h3>
+                            <span class="text-xs text-slate-500">19/04/2025</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                            Rental platform for Morocco allowing property management, online booking with payments, messaging system, and admin dashboard.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">Laravel</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">PostgreSQL</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">JavaScript</span>
+                            </div>
+                            <div class="flex gap-4 pt-4 border-t border-slate-700">
+                                <a href="https://github.com/wassimyazza" class="text-white hover:text-teal-400 text-sm flex items-center gap-2">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-teal-500/50 transition-all hover:-translate-y-2">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">Youdemy</h3>
+                            <span class="text-xs text-slate-500">20/01/2025</span>
+                        </div>
+                        <p class="text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                            E-learning platform for course creation and tracking, featuring role management, authentication, and back-office.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">PHP (OOP/MVC)</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">MySQL</span>
+                                <span class="text-xs px-2 py-1 bg-slate-900 text-teal-400 rounded">JavaScript</span>
+                            </div>
+                            <div class="flex gap-4 pt-4 border-t border-slate-700">
+                                <a href="https://github.com/wassimyazza" class="text-white hover:text-teal-400 text-sm flex items-center gap-2">
+                                    <i class="fab fa-github"></i> Source Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-850">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">Certifications</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-slate-800 px-6 py-4 rounded-lg border border-slate-700 flex items-center gap-4">
+                    <i class="fas fa-database text-teal-500 text-2xl"></i>
+                    <div>
+                        <h4 class="text-white font-semibold">Master SQL</h4>
+                        <p class="text-slate-400 text-sm">Shiyar Academy - 22 Juin, 2023</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800 px-6 py-4 rounded-lg border border-slate-700 flex items-center gap-4">
+                    <i class="fab fa-php text-teal-500 text-2xl"></i>
+                    <div>
+                        <h4 class="text-white font-semibold">Master PHP</h4>
+                        <p class="text-slate-400 text-sm">Shiyar Academy - 05 Mars, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gradient-to-t from-black to-slate-900">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Let's Work Together</h2>
+            <p class="text-slate-400 mb-12">I am based in Casablanca, Morocco, and open to new opportunities.</p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="mailto:wassimyazza10@gmail.com" class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-teal-500 transition-all hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-500 transition-colors">
+                        <i class="fas fa-envelope text-white"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Email Me</h3>
+                    <p class="text-slate-400 text-sm">wassimyazza10@gmail.com</p>
+                </a>
+                
+                <a href="tel:+2120647102474" class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-teal-500 transition-all hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-500 transition-colors">
+                        <i class="fas fa-phone text-white"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Call Me</h3>
+                    <p class="text-slate-400 text-sm">+212 06 47 10 24 74</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-slate-500 text-sm">
+                &copy; 2026 Wassim Yazza. All rights reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="https://github.com/wassimyazza" class="text-slate-500 hover:text-white transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/wassim-yazza-78b926338/" class="text-slate-500 hover:text-white transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const activeId = entry.target.id;
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${activeId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
